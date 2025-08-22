@@ -45,7 +45,7 @@ app.get ("/princesas/reino/:reino", (req, res) => {
     let reino = req.params.reino.toLowerCase();
 
     const princesasReino = princesas.filter (b => b.reino.toLowerCase().includes(reino)) ;
-    
+
     if (princesasReino.length> 0) {
 
         res.status (200).json
@@ -57,6 +57,17 @@ app.get ("/princesas/reino/:reino", (req, res) => {
     }
 
 })
+
+app.get ("/princesas/ativa/nao" , (req, res) => {
+    const resultado = princesas.filter ((b) => !b.ativa) ;
+
+    if (resultado) {
+        res.status (200).json  (resultado)
+    }else {
+        res.status (404).json ({ erro: "Ops! Nenhuma princesa encontrada!👸"})
+    }
+}) ;
+
 
 app.listen(serverPort, () => {
     console.log (`API do Mundo Mágico das Princesas Funcionando 👸! http://localhost:${serverPort}`)

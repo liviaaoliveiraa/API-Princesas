@@ -30,7 +30,7 @@ export default [
         "poder_especial": "Canto encantador",
         "animal_companheiro": "Fauna florestal",
         "descricao": "Princesa amaldiçoada a dormir por 100 anos.",
-        "ativa": true
+        "ativa": false
     },
     {
         "id": 4,
